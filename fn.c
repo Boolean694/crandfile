@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
+#include "fn.h"
 
 int newrand() {
   int op = open("/dev/random", O_RDONLY);

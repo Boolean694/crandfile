@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
-#include "fn.c"
+#include "fn.h"
 
 int main() {
   int ao[10];
