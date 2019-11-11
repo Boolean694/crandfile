@@ -3,17 +3,15 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-char *newrand() {
-  char buf[8];
+int newrand() {
   int op = open("/dev/random", O_RDONLY);
-  int nby = read(op, buf, sizeof(int));
-  char *bruh = buf;
-  return bruh;
+  int buf;
+  int nby = read(op, &buf, sizeof(int));
+  close(op);
+  return buf;
 }
 
 int main() {
-  char *ao = newrand();
-  for(int q = 0; q < sizeof(ao)/sizeof(int); q++) {
-    printf("%d ", ao[q]);
-  }
+  int ao = newrand();
+  printf("%d",ao);
 }
